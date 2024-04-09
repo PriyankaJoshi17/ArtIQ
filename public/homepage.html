@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArtIQ</title>
+    <link rel="stylesheet" href="main-style.css">
+    <script src="https://kit.fontawesome.com/f4f79a9cc1.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class="topnav">
+        <div class="leftmost">
+            <a class="active" href="#" id="home">ArtIQ</a>
+        </div>
+        <div class="middle">
+            <a href="#" id="categories">All Categories</a>
+            <a href="#" id="opportunities">Opportunities</a>
+            <a href="#" id="community">Community</a>
+            <a href="#" id="contact">Contact</a>
+        </div>
+        <div class="rightmost">
+            <a href="#" id="user-name"></a>
+            <a href="#" id="cart"><i class="fa-solid fa-cart-shopping" style="color: white;"></i>&nbsp;&nbsp;Cart</a>
+        </div>
+    </div>
+
+    <div class="second">
+        <div class="video">
+            <video height="500px" loop muted autoplay>
+                <source src="assets/video.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="para">
+            <p class="one">Learn new <br>skills. <span
+                    style="text-decoration: underline; text-decoration-color: blueviolet;">Easily</span></p>
+            <p class="two"><br>We give you unlimited access to best courses from best specialist <br>to learn
+                thousands of practical lessons in a multitude of fields.</p><br>
+
+            <div class="search-container">
+                <div class="search-input-wrapper">
+                    <input type="text" class="search-input" placeholder="Find your passion right now" />
+                    <button class="search-button" onclick="nav()">
+                        <i class="search-icon">➤</i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="third">
+        <a href="#" id="teacher">
+        <div class="col teacher">
+            <p>For teacher</p>
+        </div>
+    </a>
+        <a href="#" id="student">
+        <div class="col student">
+            <p>For student</p>
+        </div>
+    </a>
+    </div>
+
+    <div class="third">
+            <div class="content">
+                <p>ArtIQ is an innovative online platform designed to facilitate skill-swapping among its users. The website serves as a central hub where individuals can both teach and learn a diverse range of skills across various domains. Whether you're passionate about cooking, coding, painting, or playing musical instruments, ArtIQ provides a space for enthusiasts to connect and exchange knowledge.</p>
+                <p>One of the unique features of ArtIQ is its emphasis on reciprocity, allowing users not only to learn from others but also to share their expertise in return. This creates a dynamic community where members can both give and receive valuable insights, fostering a collaborative learning environment.</p>
+                <p>Moreover, ArtIQ offers opportunities for users to monetize their skills by providing paid lessons or services, allowing them to earn while they teach. This incentivizes active participation and rewards users for sharing their expertise with others.</p>
+                <p>Overall, ArtIQ stands out as a versatile platform that caters to the diverse learning needs and interests of its users while promoting a culture of knowledge exchange and mutual support. Whether you're looking to expand your skill set or share your passion with others, ArtIQ provides a convenient and rewarding platform to do so.</p>
+            </div>
+            <div class="content">
+                <video height="300px" loop muted autoplay>
+                    <source src="assets/video2.mp4" type="video/mp4">
+                </video>
+            </div>
+    </div>
+
+    <footer>
+        <div class="foot">
+            <div class="leftmost">
+                <a class="active" href="#">ArtIQ</a>
+                <br><br>
+                <p>ArtIQ is an online skill sharing platform that helps you learn new skills. It offers unlimited access
+                    to best courses from best specialist to learn thousands of practical lessons in a multitude of
+                    fields.</p>
+            </div>
+            <div>
+                <div class="download">
+                    <i class="fa fa-twitter"></i>
+                    <i class="fa fa-facebook"></i>
+                    <i class="fa fa-instagram"></i>
+                    <i class="fa fa-linkedin"></i>
+                </div>
+                <div class="images">
+                    <img src="assets/playstore.png" alt="">
+                </div>
+            </div>
+            <div class="top">
+                <a href="#top"><i class="fa fa-arrow-up"></i></a>
+            </div>
+        </div>
+        <p>© 2024 ArtIQ. All rights reserved</p>
+    </footer>
+
+    <script>
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        // Retrieve the name parameter from the URL
+        var name = getParameterByName('name');
+        // Check if the name parameter exists and display it
+        if (name) {
+            document.getElementById('user-name').innerHTML = '<img src="assets/profile.png" height="20px">&nbsp;&nbsp;' + name;
+            document.getElementById('home').href = 'http://localhost:3000/homepage.html?name=' + encodeURIComponent(name);
+            document.getElementById('opportunities').href = 'http://localhost:3000/opportunity.html?name=' + encodeURIComponent(name);
+            document.getElementById('teacher').href = 'http://localhost:3000/opportunity.html?name=' + encodeURIComponent(name);
+            document.getElementById('community').href = 'http://localhost:3000/community.html?name=' + encodeURIComponent(name);
+            document.getElementById('contact').href = 'http://localhost:3000/contact.html?name=' + encodeURIComponent(name);
+            document.getElementById('categories').href = 'http://localhost:3000/categories.html?name=' + encodeURIComponent(name);
+            document.getElementById('student').href = 'http://localhost:3000/categories.html?name=' + encodeURIComponent(name);
+            document.getElementById('user-name').href = 'http://localhost:3000/account.html?name=' + encodeURIComponent(name);
+            document.getElementById('cart').href = 'http://localhost:3000/cart.html?name=' + encodeURIComponent(name);
+            function nav() {
+                window.location.href = 'http://localhost:3000/opportunities.html?name=' + encodeURIComponent(name);
+            }
+        } else {
+            document.getElementById('user-name').innerHTML = '<img src="assets/profile.png" height="20px">&nbsp;&nbsp;guest';
+            document.getElementById('home').href = 'http://localhost:3000/homepage.html?name=guest';
+            document.getElementById('opportunities').href = 'http://localhost:3000/opportunity.html?name=guest';
+            document.getElementById('community').href = 'http://localhost:3000/community.html?name=guest';
+            document.getElementById('contact').href = 'http://localhost:3000/contact.html?name=guest';
+            document.getElementById('categories').href = 'http://localhost:3000/categories.html?name=guest';
+            document.getElementById('user-name').href = 'http://localhost:3000/account.html?name=guest';
+            document.getElementById('cart').href = 'http://localhost:3000/cart.html?name=guest';
+        }
+    </script>
+
+</body>
+
+</html>
